@@ -2,19 +2,46 @@
 <html>
    <head>
      <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-           
-      <script src='prueba.js'></script>
- 
-     <title>Stupid sentence</title>
+          
+     <title> Sumador Aleatorio </title>
    </head>
    
    <body>
-     <h1>Stupid sentences</h1>	
-     	<p>This is a paragraph</p>
-     	
-		<p>Adder...<span id='op'>5+3</span>
-			<span id="res"></span> <a href="">Add!</a>
+     <h1>Sumador Aleatorio.</h1>	
+     	     	
+		<p>Adder: <span id='op'>100+30</span>
+			<span id="res"></span> <a href="javascript:document.location.reload()">Add!</a>      
 		</p>
+    
+    <script type="text/javascript" charset="utf-8">
+        
+        function Sumandos_random (){
+          var array_sum = [];
+          array_sum[0] = Math.round(Math.random()*1000);
+          array_sum[1] = Math.round(Math.random()*1000);
+          return array_sum;
+        };
+
+        function toString(array){
+          return (array[0] + " + " + array[1]);
+        };
+
+        function suma (sumandos){
+          return (sumandos[0] + sumandos[1]);
+        };
+
+        var sumandos = Sumandos_random();        
+        var suma_total = suma (sumandos);        
+              
+       (function(){         
+          var respuesta = document.getElementById("res");     
+          var suma_string = document.getElementById("op");
+          suma_string.innerHTML = toString(sumandos);
+          respuesta.innerHTML = ("= " + suma_total);
+       }());
+
+     </script>
+
    </body>
    
-</html>
+</html> 
